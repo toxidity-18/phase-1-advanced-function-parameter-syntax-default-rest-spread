@@ -45,3 +45,11 @@ return discountPrice + (discountPrice * tax)
 
 // ... thus solving more complex event when handling parameters 
 
+// Using javascript spread operator in a function call 
+// spread operator many function is to copy arrays and objects  the element of the original to a new 
+// Using the spread operator to pass the elements of an array as an argument into a function call 
+function add(a,b,c){
+  return a+b+c
+}
+const arr = [1,2,3]; // an array of numbers
+add(...arr)// this copy the elements of the array and pass them as an argument to the function call
