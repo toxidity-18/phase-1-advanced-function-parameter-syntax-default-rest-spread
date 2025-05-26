@@ -10,3 +10,38 @@ function customGreeting(greeting,name,adjective,occasion){ // defining the funct
 //' passing values as an argument to the function 
 customGreeting('Good Morning','Software engineer','fantastic','Monday');
 
+// the rest and spread operators helps in handling this complex parameter situation much better 
+ 
+// working for an e-com prepping for post holiday sales thus reduce price by 25% discount 
+// itemPrice the original price ...
+function discountedPrice(itemPrice){
+  return itemPrice-(itemPrice*0.25) // applying 25% discount 
+}
+ 
+// make it more flexible thus discount rate will be placed as a parameter 
+function discountedPrice(itemPrice,discountRate){
+  returnPrice(itemPrice-(itemPrice*discountRate));
+}
+
+// setting default value or strict value for the discount rate = 25%
+function discountedPrice(itemPrice,discountedRate=0.25){// assigning default values to the discountRate unless otherwise specified
+  return itemPrice - (itemPrice * discountedRate);
+}
+
+// when we want a new discountRate value simply pass it as an argument unless otherwise stated 
+discountedPrice(100,0.15)
+
+// NaN may result from misplacement of default parameter values 
+function discountedPrice(discountedRate=0.25,itemPrice){
+  return itemPrice - (itemPrice * discountedRate);
+}
+discountedPrice(100) // NaN will result from this as the itemPrice is not defined first
+
+// when we want to add tax added to the total sales 
+function discountedPrice(itemPrice,tax,discountedRate=0.25){
+let discountPrice = itemPrice - (itemPrice*discountedRate)
+return discountPrice + (discountPrice * tax)
+}
+
+// ... thus solving more complex event when handling parameters 
+
