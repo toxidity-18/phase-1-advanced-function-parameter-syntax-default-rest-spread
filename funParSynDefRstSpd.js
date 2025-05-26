@@ -53,3 +53,20 @@ function add(a,b,c){
 }
 const arr = [1,2,3]; // an array of numbers
 add(...arr)// this copy the elements of the array and pass them as an argument to the function call
+
+// using javascript rest parameter to define parameter in a function 
+// ... syntax when placed into the function's parameter list it stores the argument passed into that function into an array 
+// In js its possible to pass any amount of argument into a function regardless of the number of function passed inside it 
+function muppetLab(a,b){
+  console.log(a,b) // logs out the first two arguments passed into the function 
+}
+muppetLab('Dr. Bunson','Beaker','Miss Piggy','Kermit','Animal')
+
+// applying the rest parameters to the function 
+function muppetLab(a,b,...muppets){
+  console.log(a,'',b) // log Dr. Bunson and Beaker
+  console.log(muppets) // logs out the rest of the arguments passed into the function as an array 
+  console.log(muppets(0)) // log oyt using order os indexes 
+  console.log(muppets.length)//logs out the length of the array 
+}
+
